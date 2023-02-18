@@ -1,9 +1,4 @@
-//
-//  ContentView.swift
-//  AsianPokedexApp
-//
-//  Created by 渡邊魁優 on 2023/02/19.
-//
+
 
 import SwiftUI
 
