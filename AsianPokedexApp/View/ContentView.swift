@@ -5,7 +5,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject private var pokemonViewModel = PokemonViewModel()
+    @StateObject private var pokemonViewModel = PokemonViewModel()
     
     var body: some View {
         GeometryReader { geometry in
