@@ -14,11 +14,11 @@ struct Pokemon: Codable {
     // ポケモンの図鑑No.
     let id: Int
     // ポケモンの画像
-    let sprites: Image
+    let sprites: ImageURL
 }
 
 // 画像のデータ構造
-struct Image: Codable {
+struct ImageURL: Codable {
     // ポケモンが正面向きの画像
     let frontImage: String
 
