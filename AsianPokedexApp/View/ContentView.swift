@@ -11,13 +11,18 @@ struct ContentView: View {
         GeometryReader { geometry in
             VStack{
                 Text("ポケモン検索")
-                    .frame(width: geometry.size.width,height: geometry.size.height * 0.05)
+                    .frame(
+                        width: geometry.size.width,
+                        height: geometry.size.height * 0.05
+                    )
                     .border(Color.black)
+                
                 ScrollView {
-                    LazyVGrid(columns: Array(repeating: GridItem(), count: 2)) {
+                    LazyVGrid(
+                        columns: Array(repeating: GridItem(), count: 2)
+                    ) {
                         ForEach(pokemonViewModel.pokemons) { pokemon in
                             PokemonRowView(pokemon: pokemon)
-                            
                         }
                     }
                 }
