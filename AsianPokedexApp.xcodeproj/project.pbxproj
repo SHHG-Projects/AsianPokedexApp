@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69302E0429A1E7A1009A47BA /* PokemonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69302E0329A1E7A1009A47BA /* PokemonRowView.swift */; };
+		69302E0629A1E7A6009A47BA /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69302E0529A1E7A6009A47BA /* PokemonData.swift */; };
 		8B394F9E29A133BE003125DA /* AsianPokedexAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B394F9D29A133BE003125DA /* AsianPokedexAppApp.swift */; };
 		8B394FA029A133BE003125DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B394F9F29A133BE003125DA /* ContentView.swift */; };
 		8B394FA229A133BF003125DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B394FA129A133BF003125DA /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69302E0329A1E7A1009A47BA /* PokemonRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonRowView.swift; sourceTree = "<group>"; };
+		69302E0529A1E7A6009A47BA /* PokemonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
 		8B394F9A29A133BE003125DA /* AsianPokedexApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsianPokedexApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B394F9D29A133BE003125DA /* AsianPokedexAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsianPokedexAppApp.swift; sourceTree = "<group>"; };
 		8B394F9F29A133BE003125DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				8B394F9D29A133BE003125DA /* AsianPokedexAppApp.swift */,
 				8B394F9F29A133BE003125DA /* ContentView.swift */,
+				69302E0329A1E7A1009A47BA /* PokemonRowView.swift */,
+				69302E0529A1E7A6009A47BA /* PokemonData.swift */,
 				8B394FA129A133BF003125DA /* Assets.xcassets */,
 				8B394FA329A133BF003125DA /* Preview Content */,
 			);
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B394FA029A133BE003125DA /* ContentView.swift in Sources */,
+				69302E0429A1E7A1009A47BA /* PokemonRowView.swift in Sources */,
 				8B394F9E29A133BE003125DA /* AsianPokedexAppApp.swift in Sources */,
+				69302E0629A1E7A6009A47BA /* PokemonData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
