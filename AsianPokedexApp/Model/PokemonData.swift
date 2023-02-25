@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemonModel: Identifiable {
+struct PokemonModel: Identifiable, Hashable {
     let id = UUID()
     var name: String
     var image: String

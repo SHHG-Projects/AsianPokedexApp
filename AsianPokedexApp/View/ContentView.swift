@@ -2,32 +2,18 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
-    
-    @StateObject private var pokemonViewModel = PokemonViewModel()
-    
+    @StateObject private var viewModel = PokemonViewModel()
+
     var body: some View {
-        GeometryReader { geometry in
-            VStack{
-                Text("ポケモン検索")
-                    .frame(
-                        width: geometry.size.width,
-                        height: geometry.size.height * 0.05
-                    )
-                    .border(Color.black)
-                
-                ScrollView {
-                    LazyVGrid(
-                        columns: Array(repeating: GridItem(), count: 2)
-                    ) {
-                        ForEach(pokemonViewModel.pokemons) { pokemon in
-                            PokemonRowView(pokemon: pokemon)
-                        }
-                    }
-                }
-                .padding()
+        List {
+            ForEach(viewModel.pokemons, id: \.self) { item in
+                PokemonRowView(pokemon: item)
             }
+        }
+        .navigationTitle("ポケモン一覧")
+        .task {
+            await viewModel.fetch()
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContentViewModel: ObservableObject {
+class PokemonViewModel: ObservableObject {
     @Published var pokemons: [PokemonModel] = [
         PokemonModel(name: "リザードン", image: "rizardon"),
         PokemonModel(name: "カメックス", image: "rizardon"),
@@ -16,8 +16,14 @@ class ContentViewModel: ObservableObject {
     ]
     
     let api = API()
-    
-    func onAppear() {
-        api.decodePokemonData(completion: <#T##(Result<[Pokemon], Error>) -> Void#>)
+
+    func fetch() async {
+        let items = await api.asyncFetchPokemoData()
+        let pokemons: [PokemonModel] = items.map { PokemonModel(name: $0.name, image:  $0.sprites.frontImage) }
+        await setLists(pokemons)
+    }
+
+    @MainActor private func setLists(_ pokemons: [PokemonModel]) {
+        self.pokemons = pokemons
     }
 }

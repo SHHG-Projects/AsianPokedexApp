@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct PokemonRowView: View {
-    
     @State var pokemon: PokemonModel
     
     var body: some View {
         HStack{
-            Image(pokemon.image)
-                .resizable()
-                .frame(width: 50, height: 50)
-                .border(Color.black)
+            AsyncImage(url: URL(string: pokemon.image)) { image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
+            }
+            .frame(width: 120, height: 126)
             Text(pokemon.name)
                 .frame(width: 120, height: 50)
                 .border(Color.black)

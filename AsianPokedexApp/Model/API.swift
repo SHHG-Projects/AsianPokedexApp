@@ -14,6 +14,21 @@ final class API {
         case pokemonName
     }
 
+    // async関数へのラップ関数
+    func asyncFetchPokemoData() async -> [Pokemon] {
+        return await withCheckedContinuation { continuation in
+            decodePokemonData { result in
+                switch result {
+                case .success(let pokemons):
+                    continuation.resume(returning: pokemons)
+                case .failure(let error):
+                    print(error)
+                    fatalError()
+                }
+            }
+        }
+    }
+
     // 取得したポケモンのデータをSwiftの型として扱う為にデコード
     func decodePokemonNameData(completion: @escaping (Result<[Pokemon], Error>) -> Void) {
         // データの取得を実行
