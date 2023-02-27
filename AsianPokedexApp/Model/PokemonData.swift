@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct PokemonModel: Identifiable {
+struct PokemonData: Identifiable, Hashable {
     let id = UUID()
+    let dicId: Int
     var name: String
-    var image: String
+    var image: String?
 }
 
