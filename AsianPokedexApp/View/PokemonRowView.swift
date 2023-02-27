@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct PokemonRowView: View {
-    @State var pokemon: PokemonModel
+    @State var pokemon: PokemonData
     
     var body: some View {
         HStack{
-            AsyncImage(url: URL(string: pokemon.image)) { image in
+            AsyncImage(url: URL(string: pokemon.image ?? "")) { image in
                 image.resizable()
             } placeholder: {
                 ProgressView()
@@ -27,6 +27,6 @@ struct PokemonRowView: View {
 
 struct PokemonRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonRowView(pokemon: PokemonModel(name: "リザードン", image: "rizardon"))
+        PokemonRowView(pokemon: PokemonData(dicId: 0, name: "リザードン", image: "rizardon"))
     }
 }

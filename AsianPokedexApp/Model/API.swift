@@ -7,17 +7,17 @@
 
 import Foundation
 
-final class API {
-    // getURLメソッドにて取得するURLを切り分けるための列挙型
-    private enum TypeOfFetch {
-        case pokemon
-        case pokemonName
-    }
+// getURLメソッドにて取得するURLを切り分けるための列挙型
+enum TypeOfFetch {
+    case pokemon
+    case pokemonName
+}
 
+final class API {
     // async関数へのラップ関数
-    func asyncFetchPokemoData() async -> [Pokemon] {
+    func asyncFetchPokemoData(type: TypeOfFetch) async -> [Pokemon] {
         return await withCheckedContinuation { continuation in
-            decodePokemonData { result in
+            decodePokemonData(type: type) { result in
                 switch result {
                 case .success(let pokemons):
                     continuation.resume(returning: pokemons)
@@ -52,9 +52,9 @@ final class API {
     }
 
     // 取得したポケモンのデータをSwiftの型として扱う為にデコード
-    func decodePokemonData(completion: @escaping (Result<[Pokemon], Error>) -> Void) {
+    private func decodePokemonData(type: TypeOfFetch, completion: @escaping (Result<[Pokemon], Error>) -> Void) {
         // データの取得を実行
-        fetchPokemonData(typeOfFetch: .pokemon, completion: { result in
+        fetchPokemonData(typeOfFetch: type, completion: { result in
             switch result {
             case .success(let dataArray):
                 var pokemons: [Pokemon] = []
