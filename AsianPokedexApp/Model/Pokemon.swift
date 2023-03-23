@@ -8,7 +8,7 @@
 import Foundation
 
 // ポケモンのデータ構造
-struct Pokemon: Codable {
+struct Pokemon: Decodable {
     // ポケモンの名前
     let name: String
     // ポケモンの図鑑No.
@@ -18,7 +18,7 @@ struct Pokemon: Codable {
 }
 
 // 画像のデータ構造
-struct ImageURL: Codable {
+struct ImageURL: Decodable {
     // ポケモンが正面向きの画像
     let frontImage: String
 
