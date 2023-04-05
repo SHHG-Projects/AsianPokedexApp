@@ -9,11 +9,10 @@ import SwiftUI
 
 struct PokemonRowView: View {
     
-    @State var pokemon: PokemonModel
     
     var body: some View {
         HStack{
-            Image(pokemon.image)
+            Image("rizardon")//pokemon.image)
                 .resizable()
                 .frame(width: 50, height: 50)
                 .border(Color.black)
